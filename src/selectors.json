@@ -1,0 +1,14 @@
+{
+  "username": "#Username",
+  "password": "#Password",
+  "login":
+    "body > div.container > div > div > div.col-md-5.col-md-push-7.col-sm-6.col-sm-push-6 > form > div:nth-child(6) > button",
+  "maintenanceRequest": "#content-main > div:nth-child(3) > p > a",
+  "commonAreaConcern": "#reasons_Common",
+  "description": "#desc",
+  "mayWeComeIn": "#enterIfNotHome_True",
+  "previousRequest": "#previouslyRequested_True",
+  "havePet": "#pet_False",
+  "phoneNumber": "#phone",
+  "submitRequest": "#submitBut"
+}

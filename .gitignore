@@ -1,0 +1,13 @@
+# IDE
+.vscode/*
+.idea/*
+
+# Node
+node_modules/*
+
+# Screenshot
+screenshots/*
+
+# Stuff that doesn't need to be committed
+**/secrets.json
+**/requestDescription.js
