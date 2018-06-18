@@ -1,14 +1,15 @@
 {
   "name": "maintenancerequestmaker",
-  "functionName": "maintenanceRequestMaker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Navigate to a page and submit form",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tevanc14/MaintenanceRequestMaker.git"
   },
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js"
+  },
   "license": "ISC",
   "dependencies": {
     "promise": "^8.0.1",

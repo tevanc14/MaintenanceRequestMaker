@@ -8,6 +8,6 @@ node_modules/*
 # Screenshot
 screenshots/*
 
-# Stuff that doesn't need to be committed
+# Secrets
 **/secrets.json
 **/requestDescription.js
