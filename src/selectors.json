@@ -4,10 +4,22 @@
   "login":
     "body > div.container > div > div > div.col-md-5.col-md-push-7.col-sm-6.col-sm-push-6 > form > div:nth-child(6) > button",
   "maintenanceRequest": "#content-main > div:nth-child(3) > p > a",
-  "commonAreaConcern": "#reasons_Common",
+  "maintenanceTypes": {
+    "plumbing": "#reasons_Plumbing",
+    "floors": "#reasons_Floors",
+    "commonAreaConcern": "#reasons_Common",
+    "other": "#reasons_Other",
+    "electrical": "#reasons_Electrical",
+    "windows": "#reasons_Windows",
+    "garage": "#reasons_Garage",
+    "heating": "#reasons_Heating",
+    "lights": "#reasons_Lights",
+    "appliances": "#reasons_Appliances"
+  },
   "description": "#desc",
   "mayWeComeIn": "#enterIfNotHome_True",
-  "previousRequest": "#previouslyRequested_True",
+  "previousRequestTrue": "#previouslyRequested_True",
+  "previousRequestFalse": "#previouslyRequested_False",
   "havePet": "#pet_False",
   "phoneNumber": "#phone",
   "submitRequest": "#submitBut"

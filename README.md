@@ -15,9 +15,9 @@ A Node.js-powered service to build and submit a maintenance request for my apart
 
 ```json
 {
-  "username": "bleh@gmail.com",
-  "password": "xxxxx",
-  "phoneNumber": "(123) 456-7890"
+  "username": "",
+  "password": "",
+  "phoneNumber": ""
 }
 ```
 
@@ -32,4 +32,4 @@ module.exports = {
 ```
 
 > - Install requirements by executing `npm install`
-> - Invoke program with `node index.js`
+> - Invoke program with `npm run start`

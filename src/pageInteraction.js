@@ -8,21 +8,28 @@ const selectors = require("./selectors.json");
 const url = "https://my.iretapartments.com/my";
 let page;
 
-async function submitMaintenaceRequest(isHeadless, shouldSubmit) {
+async function submitMaintenaceRequest(
+  isHeadless,
+  shouldSubmit,
+  maintenanceTypes,
+  previousRequest
+) {
   const browser = await puppeteer.launch({ headless: isHeadless });
   page = await getPage(browser);
   await login();
   await page.waitForNavigation({ waitUntil: "networkidle2" });
   await maintenanceRequest();
   await sleep(3000);
-  await describeRequest();
-  await scheduleVisit();
+  await describeRequest(maintenanceTypes);
+  await scheduleVisit(previousRequest);
+
+  await takeScreenshot("request");
 
   if (shouldSubmit) {
     await submitRequest();
   }
 
-  await takeScreenshot();
+  await takeScreenshot("finished");
 
   browser.close();
 }
@@ -47,15 +54,22 @@ async function maintenanceRequest() {
   await page.click(selectors.maintenanceRequest);
 }
 
-async function describeRequest() {
-  await page.click(selectors.commonAreaConcern);
+async function describeRequest(maintenanceTypes) {
+  for (const maintenanceType of maintenanceTypes) {
+    await page.click(maintenanceType);
+  }
   await page.click(selectors.description);
   await page.keyboard.type(requestDescription.text);
 }
 
-async function scheduleVisit() {
+async function scheduleVisit(previousRequest) {
+  if (previousRequest) {
+    await page.click(selectors.previousRequestTrue);
+  } else {
+    await page.click(selectors.previousRequestFalse);
+  }
+
   await page.click(selectors.mayWeComeIn);
-  await page.click(selectors.previousRequest);
   await page.click(selectors.havePet);
   await page.click(selectors.phoneNumber);
   await clearPhoneNumber();
@@ -75,11 +89,11 @@ function sleep(ms) {
   return new promise(resolve => setTimeout(resolve, ms));
 }
 
-async function takeScreenshot() {
+async function takeScreenshot(name) {
   const time = new Date().getTime();
 
   await page.screenshot({
-    path: "screenshots/finishedRequest-" + time + ".png",
+    path: "screenshots/" + name + "-" + time + ".png",
     fullPage: true
   });
 }

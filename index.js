@@ -1,11 +1,17 @@
 const pageInteraction = require("./src/pageInteraction");
+const maintenanceTypes = require("./src/selectors.json").maintenanceTypes;
 
 try {
-  pageInteraction.submitMaintenaceRequest(true, true);
+  pageInteraction.submitMaintenaceRequest(
+    false,
+    true,
+    [maintenanceTypes.other],
+    false
+  );
 } catch (error) {
   console.log(
-    "Something went wrong while accessing the page.",
-    "Probably a timeout navigating to page.",
+    "Something went wrong while performing actions on the page.",
+    "Possibly a mistiming of page interactions.",
     "ERROR:",
     error
   );
