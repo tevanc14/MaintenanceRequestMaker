@@ -27,9 +27,8 @@ async function submitMaintenaceRequest(
 
   if (shouldSubmit) {
     await submitRequest();
+    await takeScreenshot("finished");
   }
-
-  await takeScreenshot("finished");
 
   browser.close();
 }

@@ -1,6 +1,6 @@
 {
   "name": "maintenancerequestmaker",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Navigate to a page and submit form",
   "repository": {
     "type": "git",
@@ -8,7 +8,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "clear-screenshots": "rm screenshots/*.png"
   },
   "license": "ISC",
   "dependencies": {

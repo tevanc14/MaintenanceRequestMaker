@@ -3,7 +3,7 @@ const maintenanceTypes = require("./src/selectors.json").maintenanceTypes;
 
 try {
   pageInteraction.submitMaintenaceRequest(
-    false,
+    true,
     true,
     [maintenanceTypes.other],
     false
